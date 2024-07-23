@@ -5,8 +5,8 @@ from openai import OpenAI
 app = Flask(__name__)
 
 client = OpenAI(
-    base_url="https://integrate.api.nvidia.com/v1",
-    api_key="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"
+    base_url = "https://integrate.api.nvidia.com/v1",
+    api_key = "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"
 )
 
 @app.route('/chat', methods=['POST'])
@@ -22,7 +22,7 @@ def chat():
             temperature=0.5,
             top_p=1,
             max_tokens=1024,
-            stream=False
+            stream=True
         )
 
         bot_reply = ""
